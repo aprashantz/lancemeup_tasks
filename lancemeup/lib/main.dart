@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lancemeup/constants/routes.dart';
+import 'package:lancemeup/presentation/screens/home_screen/home_screen.dart';
 import 'package:lancemeup/presentation/screens/login_screen/login_screen.dart';
 import 'package:lancemeup/presentation/screens/onboarding/onboarding_screen.dart';
 import 'package:lancemeup/presentation/theme/dark_theme.dart';
@@ -22,6 +23,7 @@ class LanceMeUp extends StatelessWidget {
       routes: {
         loginScreen: (context) => const LoginScreen(),
         onboardingScreen: (context) => const OnboardingScreen(),
+        home: (context) => const HomeScreen(),
       },
 
       // as this is just a UI demo app, there is no need to check whether the user is logged in or not

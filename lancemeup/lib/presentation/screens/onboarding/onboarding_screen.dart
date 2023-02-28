@@ -24,7 +24,7 @@ class OnboardingScreen extends StatelessWidget {
                     (route) => false,
                   );
                 },
-                child: CustomText(text: "Skip", isBold: true))
+                child: const CustomText(text: "Skip", isBold: true))
           ],
         ),
       ),

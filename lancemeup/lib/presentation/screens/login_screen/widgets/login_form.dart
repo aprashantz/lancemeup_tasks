@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lancemeup/business_logic/textfield_validators.dart';
+import 'package:lancemeup/constants/routes.dart';
 import 'package:lancemeup/constants/value_constants.dart';
 import 'package:lancemeup/presentation/screens/login_screen/widgets/custom_text.dart';
 
@@ -31,8 +32,8 @@ class _LoginFormState extends State<LoginForm> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: const EdgeInsets.only(bottom: 4),
+            const Padding(
+              padding: EdgeInsets.only(bottom: 4),
               child: CustomText(text: "Email"),
             ),
             TextFormField(
@@ -44,8 +45,8 @@ class _LoginFormState extends State<LoginForm> {
                   hintText: "example@lancemeup.com",
                   border: OutlineInputBorder()),
             ),
-            Padding(
-                padding: const EdgeInsets.only(top: 24, bottom: 4),
+            const Padding(
+                padding: EdgeInsets.only(top: 24, bottom: 4),
                 child: CustomText(text: "Password")),
             TextFormField(
               controller: _passwordField,
@@ -76,7 +77,7 @@ class _LoginFormState extends State<LoginForm> {
                         });
                       },
                     ),
-                    CustomText(text: "Remember me", size: 14),
+                    const CustomText(text: "Remember me", size: 14),
                   ],
                 ),
                 Row(
@@ -84,7 +85,7 @@ class _LoginFormState extends State<LoginForm> {
                   children: [
                     TextButton(
                         onPressed: () {},
-                        child: CustomText(
+                        child: const CustomText(
                             text: "Forgot Password?", isBold: true, size: 14))
                   ],
                 )
@@ -95,10 +96,16 @@ class _LoginFormState extends State<LoginForm> {
               width: double.infinity,
               height: 48,
               child: ElevatedButton(
-                  onPressed: () => _loginKey.currentState!.validate()
-                      ? print("valud")
-                      : print("invalid"),
-                  child: CustomText(text: "Login")),
+                  onPressed: () {
+                    if (_loginKey.currentState!.validate()) {
+                      Navigator.pushNamedAndRemoveUntil(
+                        context,
+                        home,
+                        (route) => false,
+                      );
+                    }
+                  },
+                  child: const CustomText(text: "Login")),
             ),
           ],
         ),

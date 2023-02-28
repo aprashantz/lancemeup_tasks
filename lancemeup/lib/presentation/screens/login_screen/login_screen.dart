@@ -12,7 +12,7 @@ class LoginScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: false,
-        title: CustomText(text: signinText, size: 18, isBold: true),
+        title: const CustomText(text: signinText, size: 18, isBold: true),
         leading: IconButton(
             icon: const Icon(CupertinoIcons.arrow_left), onPressed: () {}),
       ),
@@ -22,9 +22,9 @@ class LoginScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              CustomText(text: welcomeText, size: 20, isBold: true),
-              Padding(
-                  padding: const EdgeInsets.only(top: 4),
+              const CustomText(text: welcomeText, size: 20, isBold: true),
+              const Padding(
+                  padding: EdgeInsets.only(top: 4),
                   child: CustomText(text: "Login to your account")),
               const SizedBox(height: 24),
               const LoginForm(),
@@ -33,10 +33,10 @@ class LoginScreen extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    CustomText(text: "Don't have an account?", size: 16),
+                    const CustomText(text: "Don't have an account?", size: 16),
                     TextButton(
                       onPressed: () {},
-                      child: CustomText(text: "Sign up", isBold: true),
+                      child: const CustomText(text: "Sign up", isBold: true),
                     ),
                   ],
                 ),

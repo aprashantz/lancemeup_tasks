@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 //making a custom text widget to accept
 //required properties from arguments
 class CustomText extends StatelessWidget {
-  String text;
-  double size;
-  bool isBold;
+  final String text;
+  final double size;
+  final bool isBold;
 
-  CustomText({
+  const CustomText({
     super.key,
     required this.text,
     this.size = 16,

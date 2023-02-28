@@ -37,7 +37,7 @@ class _OnboardState extends State<Onboard> {
                   }
                 });
               },
-              child: CustomText(text: "Next")),
+              child: const CustomText(text: "Next")),
         ),
       ],
     );
