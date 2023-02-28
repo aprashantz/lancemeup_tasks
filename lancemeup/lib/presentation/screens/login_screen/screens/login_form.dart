@@ -1,7 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:lancemeup/business_logic/textfield_validators.dart';
 import 'package:lancemeup/constants/value_constants.dart';
 import 'package:lancemeup/presentation/screens/login_screen/widgets/custom_text.dart';
 
@@ -13,8 +11,8 @@ class LoginForm extends StatefulWidget {
 }
 
 class _LoginFormState extends State<LoginForm> {
-  bool hidePassword = true;
-  bool rememberPassword = true;
+  bool _hidePassword = true;
+  bool _rememberPassword = true;
   final _loginKey = GlobalKey<FormState>();
   final TextEditingController _emailField = TextEditingController();
   final TextEditingController _passwordField = TextEditingController();
@@ -41,7 +39,7 @@ class _LoginFormState extends State<LoginForm> {
               controller: _emailField,
               keyboardType: TextInputType.emailAddress,
               autovalidateMode: AutovalidateMode.onUserInteraction,
-              validator: (value) {},
+              validator: (value) => TextFieldValidator.emailValidator(value),
               decoration: const InputDecoration(
                   hintText: "example@lancemeup.com",
                   border: OutlineInputBorder()),
@@ -51,16 +49,16 @@ class _LoginFormState extends State<LoginForm> {
                 child: CustomText(text: "Password")),
             TextFormField(
               controller: _passwordField,
-              obscureText: hidePassword,
+              obscureText: _hidePassword,
               autovalidateMode: AutovalidateMode.onUserInteraction,
-              validator: (value) {},
+              validator: (value) => TextFieldValidator.passwordValidator(value),
               decoration: InputDecoration(
                   hintText: "Enter your password",
                   border: const OutlineInputBorder(),
                   suffixIcon: IconButton(
                       onPressed: () {
                         setState(() {
-                          hidePassword = !hidePassword;
+                          _hidePassword = !_hidePassword;
                         });
                       },
                       icon: const Icon(Icons.remove_red_eye_outlined))),
@@ -71,17 +69,14 @@ class _LoginFormState extends State<LoginForm> {
                   children: [
                     Checkbox(
                       activeColor: lancemeupColor,
-                      value: rememberPassword,
+                      value: _rememberPassword,
                       onChanged: (bool? value) {
                         setState(() {
-                          rememberPassword = value!;
+                          _rememberPassword = value!;
                         });
                       },
                     ),
-                    CustomText(
-                      text: "Remember me",
-                      size: 14,
-                    ),
+                    CustomText(text: "Remember me", size: 14),
                   ],
                 ),
                 Row(
@@ -90,24 +85,20 @@ class _LoginFormState extends State<LoginForm> {
                     TextButton(
                         onPressed: () {},
                         child: CustomText(
-                          text: "Forgot Password?",
-                          isBold: true,
-                          size: 14,
-                        )),
+                            text: "Forgot Password?", isBold: true, size: 14))
                   ],
                 )
               ],
             ),
-            const SizedBox(
-              height: 259,
-            ),
+            const SizedBox(height: 259),
             SizedBox(
               width: double.infinity,
               height: 48,
               child: ElevatedButton(
-                onPressed: () {},
-                child: CustomText(text: "Login"),
-              ),
+                  onPressed: () => _loginKey.currentState!.validate()
+                      ? print("valud")
+                      : print("invalid"),
+                  child: CustomText(text: "Login")),
             ),
           ],
         ),
