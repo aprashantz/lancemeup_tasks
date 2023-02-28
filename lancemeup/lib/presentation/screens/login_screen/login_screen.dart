@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lancemeup/constants/text_constants.dart';
-import 'package:lancemeup/presentation/screens/login_screen/screens/login_form.dart';
+import 'package:lancemeup/presentation/screens/login_screen/widgets/login_form.dart';
 import 'package:lancemeup/presentation/screens/login_screen/widgets/custom_text.dart';
 
 class LoginScreen extends StatelessWidget {

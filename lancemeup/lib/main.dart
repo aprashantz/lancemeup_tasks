@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lancemeup/constants/routes.dart';
-import 'package:lancemeup/presentation/screens/login_screen/screens/login_screen.dart';
+import 'package:lancemeup/presentation/screens/login_screen/login_screen.dart';
+import 'package:lancemeup/presentation/screens/onboarding/onboarding_screen.dart';
 import 'package:lancemeup/presentation/theme/dark_theme.dart';
 import 'package:lancemeup/presentation/theme/light_theme.dart';
 
@@ -20,12 +21,13 @@ class LanceMeUp extends StatelessWidget {
       darkTheme: darkTheme,
       routes: {
         loginScreen: (context) => const LoginScreen(),
+        onboardingScreen: (context) => const OnboardingScreen(),
       },
 
       // as this is just a UI demo app, there is no need to check whether the user is logged in or not
       // and take user to either to dashboard or to login screen based on available user credentials
       // so will take user to onboarding screen, login screen and to dashboard
-      home: const LoginScreen(),
+      home: const OnboardingScreen(),
     );
   }
 }
