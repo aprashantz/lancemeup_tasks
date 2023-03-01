@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:lancemeup/constants/text_constants.dart';
 import 'package:lancemeup/constants/value_constants.dart';
-import 'package:lancemeup/presentation/screens/home_screen/widgets/switch_account.dart';
+import 'package:lancemeup/presentation/screens/home_screen/widgets/app_bar.dart';
+import 'package:lancemeup/presentation/screens/login_screen/widgets/custom_text.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -15,13 +17,18 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: false,
-        title: const SwitchAccount(),
-        actions: [
-          IconButton(onPressed: () {}, icon: const Icon(Icons.search, size: 25))
-        ],
-      ),
+      appBar: CustomAppBar(navAt: _navAt),
+      floatingActionButton: _navAt == 2
+          ? FloatingActionButton.extended(
+              backgroundColor: lancemeupColor,
+              onPressed: () {},
+              label: const CustomText(
+                text: composeText,
+                size: 12,
+              ),
+              icon: const Icon(Icons.edit),
+            )
+          : null,
       bottomNavigationBar: BottomNavigationBar(
           currentIndex: _navAt,
           onTap: (index) => setState(() => _navAt = index),

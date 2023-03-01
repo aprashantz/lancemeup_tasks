@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lancemeup/constants/text_constants.dart';
+import 'package:lancemeup/constants/value_constants.dart';
 import 'package:lancemeup/presentation/screens/login_screen/widgets/login_form.dart';
 import 'package:lancemeup/presentation/screens/login_screen/widgets/custom_text.dart';
 
@@ -11,10 +12,15 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: lancemeupColor,
         centerTitle: false,
         title: const CustomText(text: signinText, size: 18, isBold: true),
         leading: IconButton(
-            icon: const Icon(CupertinoIcons.arrow_left), onPressed: () {}),
+            icon: const Icon(
+              CupertinoIcons.arrow_left,
+              color: Colors.white,
+            ),
+            onPressed: () {}),
       ),
       body: Padding(
         padding: const EdgeInsets.only(left: 16, top: 24, right: 16),

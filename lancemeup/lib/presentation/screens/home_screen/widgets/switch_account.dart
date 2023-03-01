@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lancemeup/constants/text_constants.dart';
-import 'package:lancemeup/presentation/screens/login_screen/widgets/custom_text.dart';
+import 'package:lancemeup/constants/value_constants.dart';
 
 class SwitchAccount extends StatelessWidget {
   const SwitchAccount({super.key});
@@ -10,23 +10,18 @@ class SwitchAccount extends StatelessWidget {
     return InkWell(
       onTap: () {},
       child: Row(
-        children: const [
+        children: [
           Padding(
-            padding: EdgeInsets.only(right: 8.0),
-            child: Icon(Icons.person_2_outlined),
-          ),
-          Padding(
-            padding: EdgeInsets.only(right: 5),
-            child: CustomText(
-              text: currentUser,
-              size: 14,
-              isBold: true,
-            ),
-          ),
-          Icon(
-            Icons.arrow_drop_down,
-            size: 25,
-          )
+              padding: const EdgeInsets.only(right: 8.0),
+              child: ClipRRect(child: Image.asset(legoImg))),
+          const Padding(
+              padding: EdgeInsets.only(right: 5),
+              child: Text(currentUser,
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold))),
+          const Icon(Icons.arrow_drop_down, size: 25)
         ],
       ),
     );
