@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lancemeup/constants/text_constants.dart';
 import 'package:lancemeup/constants/value_constants.dart';
+import 'package:lancemeup/presentation/screens/email_screen/email_screen.dart';
 import 'package:lancemeup/presentation/screens/home_screen/widgets/app_bar.dart';
 import 'package:lancemeup/presentation/screens/login_screen/widgets/custom_text.dart';
 
@@ -70,6 +71,7 @@ class _HomeScreenState extends State<HomeScreen> {
               label: 'Profile',
             ),
           ]),
+      body: _navAt == 2 ? const EmailScreen() : null,
     );
   }
 }

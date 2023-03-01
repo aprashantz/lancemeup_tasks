@@ -1,0 +1,114 @@
+{
+  "msg": "Emails loaded succesfully",
+  "success": true,
+  "inbox": [
+    {
+      "id": 1,
+      "profile_icon": "lib/assets/person1.png",
+      "email_subject": "Regarding Internship",
+      "body": "Recent undergraduate looking for Flutter Internship in your organization.",
+      "date": "Mar 1",
+      "marked_read": false,
+      "marked_fav": false
+    },
+    {
+      "id": 2,
+      "profile_icon": "lib/assets/person2.png",
+      "email_subject": "LanceMeUp Subscription",
+      "body": "Your subscription is soon going to expire. You can renew following the link attached in this email.",
+      "date": "Mar 3",
+      "marked_read": true,
+      "marked_fav": true
+    },
+    {
+      "id": 3,
+      "profile_icon": "lib/assets/person3.jpg",
+      "email_subject": "VISA Application",
+      "body": "Congratulations, your VISA application to Mars has been approved. Please visit embassy to collect your passport. ",
+      "date": "Mar 4",
+      "marked_read": false,
+      "marked_fav": false
+    },
+    {
+      "id": 4,
+      "profile_icon": "lib/assets/person4.png",
+      "email_subject": "Installement Receipt",
+      "body": "Here is your receipt for payment of your car purchase on installement.",
+      "date": "Feb 3",
+      "marked_read": true,
+      "marked_fav": false
+    },
+    {
+      "id": 5,
+      "profile_icon": "lib/assets/person5.jpg",
+      "email_subject": "LanceCart Notification",
+      "body": "Dear Sir, your package has been shipped and is expected to be delivered to you on next Monday.",
+      "date": "Feb 23",
+      "marked_read": false,
+      "marked_fav": true
+    },
+    {
+      "id": 6,
+      "profile_icon": "lib/assets/person6.jpg",
+      "email_subject": "Installement Receipt",
+      "body": "Here is your receipt for payment of your car purchase on installement.",
+      "date": "Jan 22",
+      "marked_read": true,
+      "marked_fav": false
+    },
+    {
+      "id": 7,
+      "profile_icon": "lib/assets/person1.png",
+      "email_subject": "Regarding Internship",
+      "body": "Recent undergraduate looking for Flutter Internship in your organization.",
+      "date": "Mar 1",
+      "marked_read": false,
+      "marked_fav": false
+    },
+    {
+      "id": 8,
+      "profile_icon": "lib/assets/person2.png",
+      "email_subject": "LanceMeUp Subscription",
+      "body": "Your subscription is soon going to expire. You can renew following the link attached in this email.",
+      "date": "Mar 3",
+      "marked_read": true,
+      "marked_fav": false
+    },
+    {
+      "id": 9,
+      "profile_icon": "lib/assets/person3.jpg",
+      "email_subject": "VISA Application",
+      "body": "Congratulations, your VISA application to Mars has been approved. Please visit embassy to collect your passport. ",
+      "date": "Mar 4",
+      "marked_read": false,
+      "marked_fav": true
+    },
+    {
+      "id": 10,
+      "profile_icon": "lib/assets/person4.png",
+      "email_subject": "Installement Receipt",
+      "body": "Here is your receipt for payment of your car purchase on installement.",
+      "date": "Feb 3",
+      "marked_read": true,
+      "marked_fav": false
+    },
+    {
+      "id": 11,
+      "profile_icon": "lib/assets/person5.jpg",
+      "email_subject": "LanceCart Notification",
+      "body": "Dear Sir, your package has been shipped and is expected to be delivered to you on next Monday.",
+      "date": "Feb 23",
+      "marked_read": false,
+      "marked_fav": true
+    },
+    {
+      "id": 12,
+      "profile_icon": "lib/assets/person6.jpg",
+      "email_subject": "Installement Receipt",
+      "body": "Here is your receipt for payment of your car purchase on installement.",
+      "date": "Jan 22",
+      "marked_read": true,
+      "marked_fav": false
+    }
+  ]
+}
