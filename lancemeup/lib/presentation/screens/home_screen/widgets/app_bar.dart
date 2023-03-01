@@ -11,6 +11,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      elevation: (navAt == 0 || navAt == 4) ? 0 : 1,
       foregroundColor: Colors.black,
       centerTitle: false,
       title: navAt == 0

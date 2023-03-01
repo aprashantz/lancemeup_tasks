@@ -3,8 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:lancemeup/constants/text_constants.dart';
 import 'package:lancemeup/constants/value_constants.dart';
 import 'package:lancemeup/presentation/screens/email_screen/email_screen.dart';
+import 'package:lancemeup/presentation/screens/home_screen/home_page.dart';
 import 'package:lancemeup/presentation/screens/home_screen/widgets/app_bar.dart';
 import 'package:lancemeup/presentation/screens/login_screen/widgets/custom_text.dart';
+import 'package:lancemeup/presentation/screens/notification_screen/notification_screen.dart';
+import 'package:lancemeup/presentation/screens/profile_screen/profile_screen.dart';
+import 'package:lancemeup/presentation/screens/search_screen/search_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -71,7 +75,15 @@ class _HomeScreenState extends State<HomeScreen> {
               label: 'Profile',
             ),
           ]),
-      body: _navAt == 2 ? const EmailScreen() : null,
+      body: _navAt == 0
+          ? const HomePage()
+          : _navAt == 1
+              ? const SearchScreen()
+              : _navAt == 2
+                  ? const EmailScreen()
+                  : _navAt == 3
+                      ? const NotificationScreen()
+                      : const ProfileScreen(),
     );
   }
 }
