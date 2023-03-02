@@ -30,9 +30,8 @@ class _EmailScreenState extends State<EmailScreen> {
           return const Center(child: CircularProgressIndicator());
         } else if (snapshot.hasError) {
           return Text('Error: ${snapshot.error}');
-        } else if (snapshot.hasData) {
+        } else if (snapshot.data!.emails.isNotEmpty) {
           final inbox = snapshot.data!;
-
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

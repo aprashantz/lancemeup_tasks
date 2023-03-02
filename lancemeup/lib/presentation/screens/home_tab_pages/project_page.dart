@@ -27,7 +27,7 @@ class _ProjectPageState extends State<ProjectPage> {
             return const Center(child: CircularProgressIndicator());
           } else if (snapshot.hasError) {
             return Text('Error: ${snapshot.error}');
-          } else if (snapshot.hasData) {
+          } else if (snapshot.data!.projects.isNotEmpty) {
             final projectData = snapshot.data!;
             return ListView.builder(
               itemCount: projectData.projects.length,

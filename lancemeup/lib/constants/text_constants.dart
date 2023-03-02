@@ -17,3 +17,13 @@ const String aboutusDesc =
     "Lanceme Up is the first SAAS product of Nepal established in September 13,2020.";
 const String privacypolicyDesc =
     "We may collect: Your name, contact information,including email address, telephone number.";
+
+const List<String> notifTypes = [
+  "All",
+  "Invites",
+  "Mentions",
+  "Workspace",
+  "Emails",
+  "Downloads",
+  "Reminder"
+];
