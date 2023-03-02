@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lancemeup/data/data_repository/get_emails.dart';
+import 'package:lancemeup/data/data_repository/get_data.dart';
 import 'package:lancemeup/data/models/inbox.dart';
 import 'package:lancemeup/presentation/screens/login_screen/widgets/custom_text.dart';
 

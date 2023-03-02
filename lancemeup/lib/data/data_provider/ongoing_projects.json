@@ -1,5 +1,5 @@
 {
-  "msg": "Projects loaded succesfully",
+  "msg": "Projects loaded successfully",
   "success": true,
   "projects": [
     {
@@ -20,7 +20,7 @@
         },
         {
           "id": 3,
-          "profile_icon": "lib/assets/person3.png"
+          "profile_icon": "lib/assets/person3.jpg"
         }
       ]
     },
@@ -38,7 +38,7 @@
         },
         {
           "id": 5,
-          "profile_icon": "lib/assets/person5.png"
+          "profile_icon": "lib/assets/person5.jpg"
         },
         {
           "id": 1,
@@ -46,7 +46,7 @@
         },
         {
           "id": 6,
-          "profile_icon": "lib/assets/person6.png"
+          "profile_icon": "lib/assets/person6.jpg"
         }
       ]
     },
@@ -90,7 +90,7 @@
         },
         {
           "id": 6,
-          "profile_icon": "lib/assets/person6.png"
+          "profile_icon": "lib/assets/person6.jpg"
         }
       ]
     }

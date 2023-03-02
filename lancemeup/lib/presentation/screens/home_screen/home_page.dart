@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lancemeup/constants/value_constants.dart';
 import 'package:lancemeup/presentation/screens/home_screen/widgets/custom_tab.dart';
+import 'package:lancemeup/presentation/screens/home_tab_pages/project_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -40,8 +41,8 @@ class _HomePageState extends State<HomePage>
             tabs: const [
               CustomTab(icon: CupertinoIcons.briefcase, label: "Project Tools"),
               CustomTab(icon: CupertinoIcons.chat_bubble_2, label: "Chat"),
+              CustomTab(icon: CupertinoIcons.doc, label: "Drive "),
               CustomTab(icon: CupertinoIcons.gauge, label: "Tracking"),
-              CustomTab(icon: Icons.public, label: "Public"),
               CustomTab(icon: CupertinoIcons.padlock, label: "Private")
             ],
           ),
@@ -49,8 +50,8 @@ class _HomePageState extends State<HomePage>
         Expanded(
           child: TabBarView(
             controller: _tabController,
-            children: [
-              Center(child: Text('Tab 1')),
+            children: const [
+              ProjectPage(),
               Center(child: Text('Tab 2')),
               Center(child: Text('Tab 3')),
               Center(child: Text('Tab 4')),
