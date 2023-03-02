@@ -7,7 +7,7 @@ class NotificationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       child: Column(
-        children: [Text("Notification")],
+        children: const [Text("Notification")],
       ),
     );
   }

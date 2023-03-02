@@ -1,0 +1,55 @@
+{
+  "msg": "Notifications fetched",
+  "success": true,
+  "notifications": [
+    {
+      "id": 1,
+      "title": "Jane Copper has downloaded 'Wireframing Landing Page'.",
+      "type": "Downloads",
+      "marked_read": false,
+      "time_stamp": "2min ago"
+    },
+    {
+      "id": 2,
+      "title": "Jane Copper has mentioned you in Lancemeup workspace.",
+      "type": "Mentions",
+      "marked_read": false,
+      "time_stamp": "4hr ago"
+    },
+    {
+      "id": 3,
+      "title": "Due date of internship task submission is coming.",
+      "type": "Reminder",
+      "marked_read": true,
+      "time_stamp": "1day ago"
+    },
+    {
+      "id": 4,
+      "title": "Jane Copper has removed you from workspace.",
+      "type": "Workspace",
+      "marked_read": true,
+      "time_stamp": "1day ago"
+    },
+    {
+      "id": 5,
+      "title": "Jane Copper has rejected your invitation to workspace.",
+      "type": "Workspace",
+      "marked_read": true,
+      "time_stamp": "2days ago"
+    },
+    {
+      "id": 6,
+      "title": "Ram Bahadur has invited you to join the workspace.",
+      "type": "Invites",
+      "marked_read": true,
+      "time_stamp": "2days ago"
+    },
+    {
+      "id": 1,
+      "title": "Sita Kumari has send you an email.",
+      "type": "Emails",
+      "marked_read": true,
+      "time_stamp": "3days ago"
+    }
+  ]
+}
