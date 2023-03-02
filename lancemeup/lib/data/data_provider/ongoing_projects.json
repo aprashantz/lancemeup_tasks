@@ -1,0 +1,98 @@
+{
+  "msg": "Projects loaded succesfully",
+  "success": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "App Development",
+      "template": "Scrum",
+      "status": "Ongoing",
+      "last_updated": "2min ago",
+      "completed_percent": 40,
+      "members": [
+        {
+          "id": 1,
+          "profile_icon": "lib/assets/person1.png"
+        },
+        {
+          "id": 2,
+          "profile_icon": "lib/assets/person2.png"
+        },
+        {
+          "id": 3,
+          "profile_icon": "lib/assets/person3.png"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "New Year Marketing",
+      "template": "Karbon",
+      "status": "On hold",
+      "last_updated": "1 day ago",
+      "completed_percent": 50,
+      "members": [
+        {
+          "id": 2,
+          "profile_icon": "lib/assets/person2.png"
+        },
+        {
+          "id": 5,
+          "profile_icon": "lib/assets/person5.png"
+        },
+        {
+          "id": 1,
+          "profile_icon": "lib/assets/person1.png"
+        },
+        {
+          "id": 6,
+          "profile_icon": "lib/assets/person6.png"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "ERD to Database",
+      "template": "Waterfall",
+      "status": "Approved",
+      "last_updated": "5days ago",
+      "completed_percent": 100,
+      "members": [
+        {
+          "id": 1,
+          "profile_icon": "lib/assets/person1.png"
+        },
+        {
+          "id": 2,
+          "profile_icon": "lib/assets/person2.png"
+        },
+        {
+          "id": 4,
+          "profile_icon": "lib/assets/person4.png"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Design Work",
+      "template": "Scrum",
+      "status": "Ongoing",
+      "last_updated": "10min ago",
+      "completed_percent": 60,
+      "members": [
+        {
+          "id": 2,
+          "profile_icon": "lib/assets/person2.png"
+        },
+        {
+          "id": 4,
+          "profile_icon": "lib/assets/person4.png"
+        },
+        {
+          "id": 6,
+          "profile_icon": "lib/assets/person6.png"
+        }
+      ]
+    }
+  ]
+}

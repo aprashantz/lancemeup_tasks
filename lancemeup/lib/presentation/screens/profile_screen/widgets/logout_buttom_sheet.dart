@@ -4,7 +4,9 @@ import 'package:lancemeup/presentation/screens/login_screen/widgets/custom_text.
 
 Future<bool?> showLogoutBottomSheet(BuildContext context) {
   return showModalBottomSheet<bool>(
+    elevation: 1,
     context: context,
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
     builder: (BuildContext context) {
       return Padding(
         padding: const EdgeInsets.all(18),
@@ -12,8 +14,9 @@ Future<bool?> showLogoutBottomSheet(BuildContext context) {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
           children: [
+            Center(child: Container(color: Colors.grey, width: 48, height: 4)),
             const Padding(
-              padding: EdgeInsets.only(top: 30),
+              padding: EdgeInsets.only(top: 24),
               child: CustomText(text: sureText, size: 16, isBold: true),
             ),
             const SizedBox(height: 8),
