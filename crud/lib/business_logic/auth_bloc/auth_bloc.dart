@@ -31,17 +31,18 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   FutureOr<void> _loginClick(
       LoginClickedEvent loginClickedEvent, Emitter<AuthState> emit) async {
     emit.call(LoadingState());
-    try {
-      var loginResponse = await AuthDataRepository()
-          .requestLogin(loginClickedEvent.email, loginClickedEvent.password);
-      if (loginResponse["success"] == "true") {
-        _userAuth.saveAccessToken(loginResponse["access_token"]);
-        emit.call(LoggedInState());
-      } else {
-        emit.call(ErrorState(message: loginResponse["msg"]));
-      }
-    } catch (e) {
-      emit.call(ErrorState(message: "Server Down or no internet."));
+    // try {
+    var loginResponse = await AuthDataRepository()
+        .requestLogin(loginClickedEvent.email, loginClickedEvent.password);
+    if (loginResponse["success"] == "true") {
+      _userAuth.saveAccessToken(loginResponse["access_token"]);
+      emit.call(LoggedInState());
+    } else {
+      emit.call(ErrorState(message: loginResponse["msg"]));
     }
+    // }
+    // catch (e) {
+    //   emit.call(ErrorState(message: "Server Down or no internet."));
+    // }
   }
 }

@@ -8,10 +8,10 @@ class AuthDataProvider {
 
   Future postRequest(String endPoint, String body) async {
     final rawResponse = await http.post(
-      Uri.parse("$domain$endPoint"),
+      Uri.parse(endPoint),
       headers: requestHeader,
       body: body,
     );
-    return rawResponse;
+    return rawResponse.body;
   }
 }

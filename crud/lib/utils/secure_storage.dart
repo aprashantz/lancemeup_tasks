@@ -17,7 +17,13 @@ class UserAuth {
     return token != null ? true : false;
   }
 
+  // will call this method to save access token received from API
   Future<void> saveAccessToken(String accessToken) async {
     await _secureStorage.write(key: 'access-token', value: accessToken);
+  }
+
+  // will call this method to delete access token when user wants to logout
+  Future<void> deleteAccessToken() async {
+    await _secureStorage.deleteAll();
   }
 }
