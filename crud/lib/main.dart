@@ -1,3 +1,5 @@
+import 'package:crud/presentation/screens/home_screen/home_screen.dart';
+import 'package:crud/presentation/screens/login_screen/login_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,30 +11,18 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(),
+      home: AppEntry(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({
-    super.key,
-  });
+class AppEntry extends StatelessWidget {
+  const AppEntry({super.key});
 
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(title: const Text("CRUD")), body: const Center());
+    return HomeScreen();
   }
 }
