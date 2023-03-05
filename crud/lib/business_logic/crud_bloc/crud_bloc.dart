@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:bloc/bloc.dart';
 import 'package:crud/constants/text.dart';
 import 'package:crud/data/data_repository/crud_repository.dart';
@@ -15,6 +14,7 @@ class CRUDBloc extends Bloc<CRUDEvent, CRUDState> {
     on<AddMovieEvent>(_addMovie);
     on<FetchMoviesEvent>(_fetchMovies);
     on<UpdateMovieEvent>(_updateMovie);
+    on<DeleteMovieEvent>(_deleteMovie);
   }
 
   void _initialEvent(InitialCRUDEvent initialEvent, Emitter<CRUDState> emit) {
@@ -53,6 +53,20 @@ class CRUDBloc extends Bloc<CRUDEvent, CRUDState> {
           updateMovieEvent.title,
           updateMovieEvent.description);
       emit.call(MovieUpdatedState(titleOfUpdatedMovie: movie.title));
+    } catch (e) {
+      emit.call(OperationFailure(msg: errorMsg));
+    }
+  }
+
+  FutureOr<void> _deleteMovie(
+      DeleteMovieEvent deleteMovieEvent, Emitter<CRUDState> emit) async {
+    emit.call(OperationLoading());
+    try {
+      bool isDeleted =
+          await _movieDataRepository.deleteMovie(deleteMovieEvent.movieId);
+      isDeleted
+          ? emit.call(MovieDeletedState())
+          : emit.call(OperationFailure(msg: errorMsg));
     } catch (e) {
       emit.call(OperationFailure(msg: errorMsg));
     }

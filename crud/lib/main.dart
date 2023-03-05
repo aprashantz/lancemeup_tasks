@@ -2,7 +2,6 @@ import 'package:crud/business_logic/auth_bloc/auth_bloc.dart';
 import 'package:crud/business_logic/crud_bloc/crud_bloc.dart';
 import 'package:crud/constants/routes.dart';
 import 'package:crud/presentation/screens/home_screen/home_screen.dart';
-import 'package:crud/presentation/screens/home_screen/widgets/update_movie.dart';
 import 'package:crud/presentation/screens/login_screen/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -47,12 +46,11 @@ class AppEntry extends StatelessWidget {
       return Material(
           child: Center(
               child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: const [
-          CircularProgressIndicator(),
-          Text("Might take upto 30seconds to respond.")
-        ],
-      )));
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: const [
+            CircularProgressIndicator(),
+            Text("Might take upto 30seconds to respond.")
+          ])));
     } else if (state is LoggedInState) {
       return const HomeScreen();
     }

@@ -23,6 +23,18 @@ class UpdateMovieEvent extends CRUDEvent {
 
   const UpdateMovieEvent(
       {required this.movieId, required this.title, required this.description});
+
+  @override
+  List<Object> get props => [movieId, title, description];
+}
+
+class DeleteMovieEvent extends CRUDEvent {
+  final int movieId;
+
+  const DeleteMovieEvent({required this.movieId});
+
+  @override
+  List<Object> get props => [movieId];
 }
 
 class FetchMoviesEvent extends CRUDEvent {}

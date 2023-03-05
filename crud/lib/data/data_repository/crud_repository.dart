@@ -1,7 +1,7 @@
 import 'dart:convert';
-
 import 'package:crud/data/data_provider/data_provider.dart';
 import 'package:crud/data/models/movies.dart';
+import 'package:http/http.dart';
 
 class MovieDataRepository {
   final DataProvider _dataProvider = DataProvider();
@@ -22,5 +22,10 @@ class MovieDataRepository {
     final String updateMovieResp =
         await _dataProvider.patchRequest(movieId, requestBody);
     return Movie.fromJson(json.decode(updateMovieResp));
+  }
+
+  Future<bool> deleteMovie(int movieId) async {
+    Response rawResp = await _dataProvider.deleterequest(movieId);
+    return rawResp.statusCode == 200;
   }
 }

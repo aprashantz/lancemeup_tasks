@@ -28,63 +28,54 @@ class _PostMovieState extends State<PostMovie> {
   @override
   Widget build(BuildContext context) {
     return Form(
-      key: _addMovieKey,
-      child: Padding(
-        padding: const EdgeInsets.all(32.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            TextFormField(
-              controller: _titleField,
-              keyboardType: TextInputType.text,
-              validator: (value) {
-                return _textFieldValidator.movieFieldsValidator(value!);
-              },
-              autovalidateMode: AutovalidateMode.onUserInteraction,
-              decoration: const InputDecoration(
-                  hintText: "Movie Title",
-                  prefixIcon: Icon(
-                    CupertinoIcons.film,
-                  )),
-            ),
-            const SizedBox(height: 20),
-            TextFormField(
-              controller: _descField,
-              keyboardType: TextInputType.text,
-              validator: (value) {
-                return _textFieldValidator.movieFieldsValidator(value!);
-              },
-              autovalidateMode: AutovalidateMode.onUserInteraction,
-              decoration: const InputDecoration(
-                  hintText: "Movie Description",
-                  prefixIcon: Icon(
-                    CupertinoIcons.film_fill,
-                  )),
-            ),
-            const SizedBox(height: 20),
-            BlocBuilder<CRUDBloc, CRUDState>(builder: (context, state) {
-              if (state is OperationLoading) {
-                return const CircularProgressIndicator();
-              } else if (state is OperationFailure) {
-                Fluttertoast.showToast(msg: state.msg!);
-              } else if (state is OperationSuccess) {
-                Fluttertoast.showToast(
-                    msg:
-                        "Movie with title: ${state.postedMovie.title} and description: ${state.postedMovie.body} added to system.");
-              }
-              return ElevatedButton(
-                  onPressed: () {
-                    if (_addMovieKey.currentState!.validate()) {
-                      context.read<CRUDBloc>().add(AddMovieEvent(
-                          title: _titleField.text,
-                          description: _descField.text));
-                    }
+        key: _addMovieKey,
+        child: Padding(
+            padding: const EdgeInsets.all(32.0),
+            child:
+                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+              TextFormField(
+                controller: _titleField,
+                keyboardType: TextInputType.text,
+                validator: (value) {
+                  return _textFieldValidator.movieFieldsValidator(value!);
+                },
+                autovalidateMode: AutovalidateMode.onUserInteraction,
+                decoration: const InputDecoration(
+                    hintText: "Movie Title",
+                    prefixIcon: Icon(CupertinoIcons.film)),
+              ),
+              const SizedBox(height: 20),
+              TextFormField(
+                  controller: _descField,
+                  keyboardType: TextInputType.text,
+                  validator: (value) {
+                    return _textFieldValidator.movieFieldsValidator(value!);
                   },
-                  child: const Text("Add Movie"));
-            }),
-          ],
-        ),
-      ),
-    );
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                  decoration: const InputDecoration(
+                      hintText: "Movie Description",
+                      prefixIcon: Icon(CupertinoIcons.film_fill))),
+              const SizedBox(height: 20),
+              BlocBuilder<CRUDBloc, CRUDState>(builder: (context, state) {
+                if (state is OperationLoading) {
+                  return const CircularProgressIndicator();
+                } else if (state is OperationFailure) {
+                  Fluttertoast.showToast(msg: state.msg!);
+                } else if (state is OperationSuccess) {
+                  Fluttertoast.showToast(
+                      msg:
+                          "Movie with title: ${state.postedMovie.title} and description: ${state.postedMovie.body} added to system.");
+                }
+                return ElevatedButton(
+                    onPressed: () {
+                      if (_addMovieKey.currentState!.validate()) {
+                        context.read<CRUDBloc>().add(AddMovieEvent(
+                            title: _titleField.text,
+                            description: _descField.text));
+                      }
+                    },
+                    child: const Text("Add Movie"));
+              }),
+            ])));
   }
 }

@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:http/http.dart' as http;
 
 // making singleton class for DataProvider because it can be used for multiple api services
@@ -33,5 +35,10 @@ class DataProvider {
     final rawResponse = await http.patch(Uri.parse("$movieDomain$movieId"),
         headers: requestHeader, body: body);
     return rawResponse.body;
+  }
+
+  Future<http.Response> deleterequest(int movieId) async {
+    final rawResponse = await http.delete(Uri.parse("$movieDomain$movieId"));
+    return rawResponse;
   }
 }

@@ -16,6 +16,7 @@ class MoviesFetchedState extends CRUDState {
   List<Object?> get props => [movies];
 }
 
+// for updating existing movie
 class MovieUpdatedState extends CRUDState {
   final String titleOfUpdatedMovie;
 
@@ -24,11 +25,16 @@ class MovieUpdatedState extends CRUDState {
   List<Object?> get props => [titleOfUpdatedMovie];
 }
 
+// for deleting existing movie
+class MovieDeletedState extends CRUDState {}
+
+// for posting new movie
 class OperationSuccess extends CRUDState {
   final Movie postedMovie;
   OperationSuccess({required this.postedMovie});
 }
 
+// for any crud failure
 class OperationFailure extends CRUDState {
   final String? msg;
   OperationFailure({required this.msg});
