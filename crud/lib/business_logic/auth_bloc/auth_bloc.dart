@@ -9,6 +9,7 @@ part 'auth_state.dart';
 
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final UserAuth _userAuth = UserAuth();
+  final AuthDataRepository _authDataRepository = AuthDataRepository();
   AuthBloc() : super(LoadingState()) {
     on<LoginCheckerEvent>(_loginChecker);
     on<LoginClickedEvent>(_loginClick);
@@ -31,18 +32,17 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   FutureOr<void> _loginClick(
       LoginClickedEvent loginClickedEvent, Emitter<AuthState> emit) async {
     emit.call(LoadingState());
-    // try {
-    var loginResponse = await AuthDataRepository()
-        .requestLogin(loginClickedEvent.email, loginClickedEvent.password);
-    if (loginResponse["success"] == "true") {
-      _userAuth.saveAccessToken(loginResponse["access_token"]);
-      emit.call(LoggedInState());
-    } else {
-      emit.call(ErrorState(message: loginResponse["msg"]));
+    try {
+      var loginResponse = await _authDataRepository.requestLogin(
+          loginClickedEvent.email, loginClickedEvent.password);
+      if (loginResponse["success"] == "true") {
+        _userAuth.saveAccessToken(loginResponse["access_token"]);
+        emit.call(LoggedInState());
+      } else {
+        emit.call(ErrorState(message: loginResponse["msg"]));
+      }
+    } catch (e) {
+      emit.call(ErrorState(message: "Server Down or no internet."));
     }
-    // }
-    // catch (e) {
-    //   emit.call(ErrorState(message: "Server Down or no internet."));
-    // }
   }
 }

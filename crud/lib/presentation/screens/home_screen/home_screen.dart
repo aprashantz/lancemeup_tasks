@@ -1,5 +1,8 @@
 import 'package:crud/business_logic/auth_bloc/auth_bloc.dart';
-import 'package:crud/constants/routes.dart';
+import 'package:crud/presentation/screens/home_screen/add_movie.dart';
+import 'package:crud/presentation/screens/home_screen/delete_movie.dart';
+import 'package:crud/presentation/screens/home_screen/update_movie.dart';
+import 'package:crud/presentation/screens/home_screen/view_movies.dart';
 import 'package:crud/utils/secure_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -16,7 +19,6 @@ class _HomeScreenState extends State<HomeScreen>
   TabController? _tabController;
   bool clickedLogout = false;
   final UserAuth _userAuth = UserAuth();
-  final AppRoutes _appRoutes = AppRoutes();
 
   Future<bool> signedOut() async {
     setState(() {
@@ -43,23 +45,17 @@ class _HomeScreenState extends State<HomeScreen>
   Widget build(BuildContext context) {
     final authBloc = Provider.of<AuthBloc>(context);
     return SafeArea(
-      child: Scaffold(
-          floatingActionButton: FloatingActionButton(
-            onPressed: () async {
-              if (await signedOut()) {
-                authBloc.add(InitialEvent());
-                Navigator.pushNamedAndRemoveUntil(
-                    context, _appRoutes.loginScreen, (route) => false);
-              }
-            },
-            child: clickedLogout
-                ? const CircularProgressIndicator(
-                    color: Colors.white,
-                  )
-                : const Icon(Icons.logout),
-          ),
-          body: Column(
-            children: [
+        child: Scaffold(
+            floatingActionButton: FloatingActionButton(
+                onPressed: () async {
+                  if (await signedOut()) {
+                    authBloc.add(InitialEvent());
+                  }
+                },
+                child: clickedLogout
+                    ? const CircularProgressIndicator(color: Colors.white)
+                    : const Icon(Icons.logout)),
+            body: Column(children: [
               Material(
                   elevation: 1,
                   child: SizedBox(
@@ -75,14 +71,13 @@ class _HomeScreenState extends State<HomeScreen>
                             Text("Delete")
                           ]))),
               Expanded(
-                  child: TabBarView(controller: _tabController, children: [
-                Center(child: Text('Tab 1')),
-                Center(child: Text('Tab 2')),
-                Center(child: Text('Tab 3')),
-                Center(child: Text('Tab 4')),
+                  child:
+                      TabBarView(controller: _tabController, children: const [
+                PostMovie(), // POST Request
+                ViewMovies(), // GET Request
+                UpdateMovie(), // PATCH Request
+                DeleteMovie() // DELETE Request
               ]))
-            ],
-          )),
-    );
+            ])));
   }
 }

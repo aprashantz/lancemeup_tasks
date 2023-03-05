@@ -16,4 +16,11 @@ class TextFieldValidator {
     }
     return null;
   }
+
+  movieFieldsValidator(String text) {
+    if (text.isEmpty || text.length < 6) {
+      return "Must be atleast 6";
+    }
+    return null;
+  }
 }
