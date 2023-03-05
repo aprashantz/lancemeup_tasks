@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:bloc/bloc.dart';
+import 'package:crud/constants/text.dart';
 import 'package:crud/data/data_repository/auth_repository.dart';
 import 'package:crud/utils/secure_storage.dart';
 import 'package:equatable/equatable.dart';
@@ -42,7 +43,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         emit.call(ErrorState(message: loginResponse["msg"]));
       }
     } catch (e) {
-      emit.call(ErrorState(message: "Server Down or no internet."));
+      emit.call(ErrorState(message: errorMsg));
     }
   }
 }

@@ -1,7 +1,5 @@
 import 'package:crud/business_logic/auth_bloc/auth_bloc.dart';
 import 'package:crud/presentation/screens/home_screen/add_movie.dart';
-import 'package:crud/presentation/screens/home_screen/delete_movie.dart';
-import 'package:crud/presentation/screens/home_screen/update_movie.dart';
 import 'package:crud/presentation/screens/home_screen/view_movies.dart';
 import 'package:crud/utils/secure_storage.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +30,7 @@ class _HomeScreenState extends State<HomeScreen>
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 4, vsync: this);
+    _tabController = TabController(length: 2, vsync: this);
   }
 
   @override
@@ -64,19 +62,12 @@ class _HomeScreenState extends State<HomeScreen>
                           labelColor: Colors.blue,
                           unselectedLabelColor: Colors.black,
                           controller: _tabController,
-                          tabs: const [
-                            Text("Create"),
-                            Text("Read"),
-                            Text("Update"),
-                            Text("Delete")
-                          ]))),
+                          tabs: const [Text("Add Movie"), Text("Movies")]))),
               Expanded(
                   child:
                       TabBarView(controller: _tabController, children: const [
                 PostMovie(), // POST Request
-                ViewMovies(), // GET Request
-                UpdateMovie(), // PATCH Request
-                DeleteMovie() // DELETE Request
+                ViewMovies() // GET PATCH DELETE Request
               ]))
             ])));
   }

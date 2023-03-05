@@ -15,3 +15,14 @@ class AddMovieEvent extends CRUDEvent {
   @override
   List<Object> get props => [title, description];
 }
+
+class UpdateMovieEvent extends CRUDEvent {
+  final int movieId;
+  final String title;
+  final String description;
+
+  const UpdateMovieEvent(
+      {required this.movieId, required this.title, required this.description});
+}
+
+class FetchMoviesEvent extends CRUDEvent {}

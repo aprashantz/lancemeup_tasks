@@ -17,6 +17,14 @@ class _PostMovieState extends State<PostMovie> {
   final TextEditingController _titleField = TextEditingController();
   final TextEditingController _descField = TextEditingController();
   final TextFieldValidator _textFieldValidator = TextFieldValidator();
+
+  @override
+  void dispose() {
+    _titleField.dispose();
+    _descField.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Form(
