@@ -1,5 +1,7 @@
 # LanceMeUp Tasks
 
+## Note: Uses Flutter Secure Storage package, so please change minSDKVersion to at least 18 to run task 2: CRUD
+
 - Task 1: UI Clone
 - Task 2: App with CRUD feature with API integration and State Management
 
